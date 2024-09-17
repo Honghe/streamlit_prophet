@@ -1,6 +1,10 @@
 from typing import Any, Dict, List
 
 import streamlit as st
+
+# Page config
+st.set_page_config(page_title="Prophet", layout="wide")
+
 from streamlit_prophet.lib.dataprep.clean import clean_df
 from streamlit_prophet.lib.dataprep.format import (
     add_cap_and_floor_cols,
@@ -43,9 +47,6 @@ from streamlit_prophet.lib.inputs.params import (
 )
 from streamlit_prophet.lib.models.prophet import forecast_workflow
 from streamlit_prophet.lib.utils.load import load_config, load_image
-
-# Page config
-st.set_page_config(page_title="Prophet", layout="wide")
 
 # Load config
 config, instructions, readme = load_config(

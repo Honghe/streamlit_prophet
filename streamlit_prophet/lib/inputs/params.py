@@ -277,7 +277,7 @@ def input_regressors(
     """
     regressors: Dict[Any, Any] = dict()
     default_params = config["model"]
-    all_cols = set(df.columns) - {"ds", "y"}
+    all_cols = list(set(df.columns) - {"ds", "y"})
     mask = df[all_cols].isnull().sum() == 0
     eligible_cols = sorted(list(mask[mask].index))
     _print_removed_regressors(sorted(set(all_cols) - set(eligible_cols)))
