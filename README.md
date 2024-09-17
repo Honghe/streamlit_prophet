@@ -106,3 +106,29 @@ We encourage you to open an [issue](https://github.com/artefactory-global/stream
 
 For more information, see [`CONTRIBUTING`](https://github.com/artefactory-global/streamlit_prophet/blob/main/CONTRIBUTING.md) instructions.
 If you wish to containerize the app, see [`DOCKER`](https://github.com/artefactory-global/streamlit_prophet/blob/main/DOCKER.md) instructions.
+
+## How to bump numpy to 2.x
+
+Only modify `NDArray[np.float_]` to `NDArray[np.float64]` of Prophet lib.
+
+```
+Traceback (most recent call last):
+  File "venv\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 88, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "venv\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 590, in code_to_exec
+    exec(code, module.__dict__)
+  File "E:\pythonprojects\streamlit_prophet\streamlit_prophet\app\dashboard.py", line 22, in <module>
+    from streamlit_prophet.lib.exposition.visualize import (
+  File "E:\pythonprojects\streamlit_prophet\streamlit_prophet\lib\exposition\visualize.py", line 11, in <module>
+    from prophet import Prophet
+  File "venv\Lib\site-packages\prophet\__init__.py", line 7, in <module>
+    from prophet.forecaster import Prophet
+  File "venv\Lib\site-packages\prophet\forecaster.py", line 28, in <module>
+    class Prophet(object):
+  File "venv\Lib\site-packages\prophet\forecaster.py", line 459, in Prophet
+    ) -> NDArray[np.float_]:
+                 ^^^^^^^^^
+  File "venv\Lib\site-packages\numpy\__init__.py", line 414, in __getattr__
+    raise AttributeError(
+AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
