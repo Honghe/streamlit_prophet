@@ -132,3 +132,4 @@ Traceback (most recent call last):
   File "venv\Lib\site-packages\numpy\__init__.py", line 414, in __getattr__
     raise AttributeError(
 AttributeError: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+```
